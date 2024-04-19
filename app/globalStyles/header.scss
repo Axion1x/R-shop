@@ -1,0 +1,133 @@
+.headerContainer {
+  background-color: #171A21;
+  .header {
+    height: 100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px 30px;
+    display: flex;
+    color: white;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1535px;
+
+    & > * {
+      margin: auto 0;
+    }
+
+    .menuBtn {
+      position: relative;
+      font-size: 24px;
+      font-weight: 700;
+      padding-left: 35px !important;
+      transition: all .2s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        color: #7700FF;
+      }
+
+      &::before {
+        background-color: #ffffff;
+        content: '';
+        height: 40px;
+        width: 40px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transition: background-color .2s ease-in-out;
+        mask: url(../../public/img/burger.svg) no-repeat;
+      }
+
+      &:hover::before {
+        background-color: #7700FF;
+      }
+    }
+    .headerNav {
+      margin: 0;
+      padding: 0;
+
+      .headerItem {
+        cursor: pointer;
+        position: relative;
+        height: 40px;
+        width: 40px;
+        display: block;
+
+        & > * {
+          border: none;
+          background-color: transparent;
+        }
+
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+
+        .headerItemLink::before {
+          content: '';
+          height: 40px;
+          width: 40px;
+          left: 0;
+          position: absolute;
+          top: 0;
+          transition: background-color .2s ease-in-out;
+        }
+
+        .headerItemLink:hover:before {
+          background-color: #7700FF;
+        }
+
+        .headerItemLink--search::before {
+          background-color: #fff;
+          -webkit-mask: url(../../public/img/search.svg) no-repeat 50% 50%;
+          mask: url(../../public/img/search.svg) no-repeat 50% 50%;
+        }
+
+        .headerItemLink--likes::before {
+          background-color: #fff;
+          -webkit-mask: url(../../public/img/heart.svg) no-repeat 50% 50%;
+          mask: url(../../public/img/heart.svg) no-repeat 50% 50%;
+        }
+
+        .headerItemLink--bucket::before {
+          background-color: #fff;
+          -webkit-mask: url(../../public/img/basket.svg) no-repeat 50% 50%;
+          mask: url(../../public/img/basket.svg) no-repeat 50% 50%;
+        }
+
+        .headerItemLink--client::before {
+          background-color: #fff;
+          -webkit-mask: url(../../public/img/profile.svg) no-repeat 50% 50%;
+          mask: url(../../public/img/profile.svg) no-repeat 50% 50%;
+        }
+
+        .headerItemLink--suffix::before {
+          background-color: #fff;
+          -webkit-mask: url(../../public/img/suffix.svg) no-repeat 50% 50%;
+          mask: url(../../public/img/suffix.svg) no-repeat 50% 50%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 800px){
+  .menuBtn{
+    display: none;
+  }
+  .headerItem:not(:first-child):not(:last-child){
+    display: none !important;
+  }
+}
+@media (max-width: 500px){
+  .header{
+    padding: 7px 15px !important;
+  }
+  .headerLogo * {
+    height: 40px !important;
+    margin: 0 auto;
+  }
+  .headerItem:not(:last-child) {
+    margin-right: 10px !important;
+  }
+}

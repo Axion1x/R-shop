@@ -1,0 +1,55 @@
+
+body {
+  font-weight: 400;
+  background-color: #2f2f2f;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.overflow-hidden {
+  overflow-y: hidden;
+  padding-right: 8px;
+}
+.btnReset {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.listReset {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.mainContent{
+  min-height: calc(100vh - 100px);
+  background-color: #2f2f2f;
+}
+
+.stopScroll {
+  overflow: hidden;
+}
+.logo>*{
+  height: 60px;
+  margin: 0 auto;
+}
+::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: darkgray; /* Set the color of the scrollbar handle */
+}
+
+.img_loading{
+  background-color:gray;
+}
