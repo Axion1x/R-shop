@@ -2,21 +2,20 @@ import React from 'react';
 import '@/app/globalStyles/mobileNav.scss';
 import {useLang} from "@/hooks/useLang";
 import Link from "next/link";
-import {toggleMenu} from "@/features/menu/menuSlice";
+import {menuActions} from "@/features/menu/menuSlice";
 import {useDispatch} from "react-redux";
 import MobileCatalog from "@/components/modules/Header/MobileCatalog";
-import {toggleMobileCatalog} from "@/features/menu/mobileCatalog";
-import useImagePreloader from "@/hooks/useImagPreloader";
+import {mobileCatalogActions} from "@/features/menu/mobileCatalog";
 
 const MobileNavbar = () => {
     const {lang, translations} = useLang();
     const dispatch = useDispatch();
 
     const handleMenuClick = () =>{
-        dispatch(toggleMenu(1))
+        dispatch(menuActions.toggleMenu())
     }
     const handleCatalogClick = () =>{
-        dispatch(toggleMobileCatalog(1));
+        dispatch(mobileCatalogActions.toggleMobileCatalog());
     }
     return (
         <>

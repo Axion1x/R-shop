@@ -1,12 +1,19 @@
 import { getNewProducts, getBestsellerProducts } from "@/api/main-page";
 import {createSlice} from "@reduxjs/toolkit";
+import {IProduct} from "@/types/modules";
 
-const initialState = {
+const initialState:ProductsSchema = {
     newProducts: [],
     bestsellerProducts: [],
     loading: false,
     error: null
 };
+export type ProductsSchema = {
+    newProducts: IProduct[],
+    bestsellerProducts: IProduct[],
+    loading: boolean,
+    error: string | null,
+}
 
 const productsSlice = createSlice({
     name: 'products',
@@ -24,7 +31,7 @@ const productsSlice = createSlice({
             })
             .addCase(getNewProducts.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.error.message;
+                state.error = action.error.message || null;
             })
             .addCase(getBestsellerProducts.pending, (state) => {
                 state.loading = true;
@@ -36,9 +43,10 @@ const productsSlice = createSlice({
             })
             .addCase(getBestsellerProducts.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.error.message;
+                state.error = action.error.message || null;
             });
     }
 });
 
-export default productsSlice.reducer;
+export const { actions: productsActions } = productsSlice;
+export const { reducer: productsReducer } = productsSlice;

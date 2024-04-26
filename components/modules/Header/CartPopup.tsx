@@ -6,17 +6,25 @@ import "@/app/globalStyles/menu.scss"
 import {useLang} from "@/hooks/useLang";
 import {AnimatePresence} from "framer-motion";
 import { motion } from "framer-motion"
+import {useDispatch, useSelector} from "react-redux";
+import {cartActions} from "@/features/cart/cartSlice";
+import CartItem from "@/components/modules/Header/CartItem";
 
 
 const CartPopup = forwardRef<HTMLDivElement, IWrappedComponentProps>(
     ({open,setOpen}, ref) =>{
         const {lang, translations} = useLang();
+        const cartList = useSelector((state)=> state.cart.cartList);
+        const totalPrice = cartList.reduce((total, item) => {
+            return total + (item.price * item.count);
+        }, 0);
         const handleShowPopup = () => {
             setOpen(true);
         }
         const handleHidePopup = () => {
             setOpen(false);
         }
+
         return (
             <div className='cartPopup' ref={ref}>
                 <Link
@@ -38,13 +46,17 @@ const CartPopup = forwardRef<HTMLDivElement, IWrappedComponentProps>(
                                 <div className="cartTitle" >{translations[lang].breadcrumbs.cart}</div>
                                 <button className="closeButton" onClick={handleHidePopup}></button>
                             </div>
-                            <div className="cartContent">
-                                {/* Cart content here */}
+                            <div className='cartContent'>
+                                {cartList.length ? (
+                                    cartList.map((el, index) => (
+                                        <CartItem key={index} item={el} />
+                                    ))) : (<div className='empty'></div>)}
                             </div>
+
                             <div className="cartFooter">
                                 <div className="cartFooterContent">
                                     <div className="cartFooterTitle">{translations[lang].common.order_price}:</div>
-                                    <div className="cartPrice">0</div>
+                                    <div className="cartPrice">{totalPrice}</div>
                                 </div>
                                 <button className="getOrder">
                                     {translations[lang].breadcrumbs.order}

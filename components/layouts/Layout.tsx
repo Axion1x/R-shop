@@ -1,13 +1,13 @@
 'use client'
 import Header from "@/components/modules/Header/Header";
 import React, {useEffect, useState} from "react";
-import {store} from "@/features/store";
+import {persistor, store} from "@/features/store";
 import {Provider} from "react-redux";
 import MobileNavbar from "@/components/modules/Header/MobileNavbar";
 import FooterMy from "@/components/modules/Footer/Footer";
+import { PersistGate } from 'redux-persist/integration/react';
 
 const Layout = ({children}: { children: React.ReactNode }) => {
-
 
     const [screenWidth, setScreenWidth] = useState<number | null>(null);
 
@@ -30,10 +30,12 @@ const Layout = ({children}: { children: React.ReactNode }) => {
 
     return (
         <Provider store={store}>
-            <Header/>
-            {children}
-            <FooterMy/>
-            <>{screenWidth <= 800 ? <MobileNavbar/> : null}</>
+            <PersistGate loading={null} persistor={persistor}>
+                <Header/>
+                {children}
+                <FooterMy/>
+                <>{screenWidth <= 800 ? <MobileNavbar/> : null}</>
+            </PersistGate>
         </Provider>
     );
 };

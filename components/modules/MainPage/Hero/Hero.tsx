@@ -26,7 +26,7 @@ const Hero = () => {
                     className={`${styles.mySwiper} `}
                 >
                     <SwiperSlide className={styles.swiperSlide}>
-                        <img src="https://purepng.com/public/uploads/large/white-tshirt-n0j.png" />
+                        <img  src="https://purepng.com/public/uploads/large/white-tshirt-n0j.png" />
                     </SwiperSlide>
                     <SwiperSlide className={styles.swiperSlide}>
                         <img src="https://www.pngall.com/wp-content/uploads/12/Jumper-Sweater-PNG-Clipart.png" />

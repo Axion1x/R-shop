@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {toggleMobileCatalog} from "@/features/menu/mobileCatalog";
+import {mobileCatalogActions} from "@/features/menu/mobileCatalog";
 import {useLang} from "@/hooks/useLang";
 
 
@@ -17,7 +17,7 @@ const MobileCatalog = () => {
         }
     }, [toggleMobile]);
     const handleCatalogClick = () => {
-        dispatch(toggleMobileCatalog(1));
+        dispatch(mobileCatalogActions.toggleMobileCatalog());
     }
 
     const handleIndex = (index) => {

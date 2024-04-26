@@ -267,7 +267,7 @@
     display: flex;
     align-items: stretch;
     overflow: inherit;
-
+    margin-bottom: 60px;
     @media (max-width: 680px) {
       flex-direction: column;
     }

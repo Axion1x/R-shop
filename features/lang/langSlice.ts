@@ -1,9 +1,12 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+const initialState:LangSchema = {
     currentLanguage: "ua",
 };
+export type LangSchema = {
+    currentLanguage: string
+}
 
 const langSlice = createSlice({
     name: "lang",
@@ -15,5 +18,5 @@ const langSlice = createSlice({
     },
 });
 
-export const { changeLanguage } = langSlice.actions;
-export default langSlice.reducer;
+export const { actions: langActions } = langSlice;
+export const { reducer: langReducer } = langSlice;

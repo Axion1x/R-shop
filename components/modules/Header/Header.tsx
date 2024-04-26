@@ -6,21 +6,21 @@ import "@/app/globalStyles/header.scss"
 import Link from "next/link";
 import Menu from "@/components/modules/Header/Menu";
 import {useDispatch} from "react-redux";
-import {toggleMenu} from "@/features/menu/menuSlice";
-import {toggleSearch} from "@/features/menu/headerSearch";
+import {menuActions} from "@/features/menu/menuSlice";
 import SearchModal from "@/components/modules/Header/SearchModal";
 import CartPopup from "@/components/modules/Header/CartPopup";
+import {searchActions} from "@/features/menu/headerSearch";
 
 const Header = () => {
     const {lang, translations} = useLang();
     const dispatch = useDispatch();
 
     const handleSearchClick = () =>{
-        dispatch(toggleSearch(1))
+        dispatch(searchActions.toggleSearch())
     }
 
     const handleMenuClick = () =>{
-        dispatch(toggleMenu(1))
+        dispatch(menuActions.toggleMenu())
     }
 
     return (

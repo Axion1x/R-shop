@@ -1,3 +1,4 @@
+
 /* eslint-disable indent */
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { faker } = require('@faker-js/faker')
@@ -65,7 +66,7 @@ module.exports = {
             name: faker.lorem.sentence(2),
             description: faker.lorem.sentences(10),
             characteristics: characteristics.find((item) => item.type === type),
-            images: images.filter((item) => item.includes(type)),
+            images: getRandomArrayValue(images.filter((item) => item.includes(type))),
             vendorCode: faker.string.numeric(4),
             inStock: faker.string.numeric(2),
             isBestseller: faker.datatype.boolean(),

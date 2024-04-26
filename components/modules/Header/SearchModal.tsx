@@ -1,18 +1,18 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import '@/app/globalStyles/menu.scss';
-import {toggleSearch} from "@/features/menu/headerSearch";
+import {searchActions} from "@/features/menu/headerSearch";
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import {useLang} from "@/hooks/useLang";
 import '@/app/globalStyles/menu.scss'
-import {changeLanguage} from "@/features/lang/langSlice";
+import {langActions} from "@/features/lang/langSlice";
 const SearchModal = () => {
     const toggle = useSelector((state)=>state.search.searchIsOpen);
     const {lang, translations} = useLang();
     const dispatch = useDispatch();
     const handleClose = () => {
-        dispatch(toggleSearch(1))
+        dispatch(searchActions.toggleSearch())
     }
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const SearchModal = () => {
         }
     }, [toggle]);
     const handleClick = () => {
-        dispatch(changeLanguage(1))
+        dispatch(langActions.changeLanguage())
     }
 
     const handleClickOutside = (event) => {
