@@ -9,7 +9,6 @@ const compositions = ['cotton', 'synthetics', 'polyester']
 const clothTypes = ['t-shirts', 'long-sleeves', 'hoodie', 'outerwear']
 const images = [
   '/img/clothes/cloth-hoodie-1.png',
-  '/img/clothes/cloth-hoodie-2.png',
   '/img/clothes/cloth-long-sleeves-1.png',
   '/img/clothes/cloth-long-sleeves-2.png',
   '/img/clothes/cloth-outerwear-1.png',

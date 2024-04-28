@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getNewProducts, getBestsellerProducts} from "@/api/main-page";
-
-function Test() {
+import ProductListItem from "@/components/modules/MainPage/ProductListItem/ProductListItem";
+import styles from '@/styles/product-list-item/index.module.scss'
+function ProductList() {
     const newProducts = useSelector(state => state.products.newProducts);
     const bestsellerProducts = useSelector(state => state.products.bestsellerProducts);
     const loading = useSelector(state => state.products.loading);
@@ -15,23 +16,23 @@ function Test() {
     }, [dispatch]);
 
     return (
-        <div>
+        <div className={styles.container}>
             {loading && <p>Loading...</p>}
             {error && <p>Error: {error}</p>}
-            <h2>New Products</h2>
-            <ul>
-                {newProducts.map(product => (
-                    <li key={product.id}>{product.name}</li>
+            <h2 className='site-title'>New Products</h2>
+            <ul className ={styles.productsList}>
+                {newProducts.map((product,id) => (
+                    <ProductListItem key={id} item={product}/>
                 ))}
             </ul>
-            <h2>Bestseller Products</h2>
-            <ul>
-                {bestsellerProducts.map(product => (
-                    <li key={product.id}>{product.name}</li>
+            <h2 className='site-title' >Bestseller Products</h2>
+            <ul className ={styles.productsList}>
+                {bestsellerProducts.map((product,id) => (
+                    <ProductListItem key={id} item={product}/>
                 ))}
             </ul>
         </div>
     );
 }
 
-export default Test;
+export default ProductList;

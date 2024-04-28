@@ -1,7 +1,11 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-const initialState = {
+const initialState:MenuSchema = {
     menuIsOpen: false,
+}
+
+export type MenuSchema = {
+    menuIsOpen: boolean,
 }
 
 const menuSlice = createSlice({
@@ -13,5 +17,6 @@ const menuSlice = createSlice({
       }
     },
 })
-export const {toggleMenu} = menuSlice.actions;
-export default menuSlice.reducer;
+
+export const { actions: menuActions } = menuSlice;
+export const { reducer: menuReducer } = menuSlice;

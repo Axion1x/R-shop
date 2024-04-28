@@ -9,12 +9,11 @@ import img3 from '@/public/img/img3.png'
 import img4 from '@/public/img/img4.jpg'
 import styles from '@/styles/main-page/index.module.scss'
 import {useEffect, useState} from "react";
-import MainSlider from "@/components/modules/MainPage/Categories/MainSlider";
 
 const Categories = () => {
     const {lang, translations} = useLang()
     const {handleLoadingImageComplete, imgSpinner} = useImagePreloader()
-    const imgSpinnerClass = imgSpinner ? 'img_loading' : ''
+    const imgSpinnerClass = imgSpinner ? 'img_loading' : '';
     const [screenWidth, setScreenWidth] = useState<number | null>(null);
 
     useEffect(() => {
@@ -44,6 +43,7 @@ const Categories = () => {
                             className={`${styles.categories__right} ${styles.categories__img} ${imgSpinnerClass}`}
                         >
                             <Image
+                                priority={1}
                                 src={img1}
                                 alt='Cloth'
                                 className='transition-opacity opacity-0 duration'

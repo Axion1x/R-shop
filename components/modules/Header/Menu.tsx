@@ -2,10 +2,10 @@
 import React, {useState, useEffect} from 'react';
 import '@/app/globalStyles/menu.scss';
 import {useDispatch, useSelector} from "react-redux";
-import {toggleMenu} from "@/features/menu/menuSlice";
+import {menuActions} from "@/features/menu/menuSlice";
 import Logo from "@/components/elements/logo/Logo";
 import Accordion from "@/components/modules/Accordion/Accordion";
-import {changeLanguage} from "@/features/lang/langSlice";
+import {langActions} from "@/features/lang/langSlice";
 
 const Menu = () => {
     const dispatch = useDispatch();
@@ -19,12 +19,12 @@ const Menu = () => {
         }
     }, [toggleMenuState]);
     const handleClick = () => {
-        dispatch(changeLanguage(1))
+        dispatch(langActions.changeLanguage())
     }
 
 
     const handleMenuToggle = () => {
-        dispatch(toggleMenu(!toggleMenuState));
+        dispatch(menuActions.toggleMenu(!toggleMenuState));
     };
 
     return (

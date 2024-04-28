@@ -1,8 +1,12 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-const initialState = {
+const initialState:SearchSchema = {
     searchIsOpen: false,
 }
+export type SearchSchema = {
+    searchIsOpen: boolean,
+}
+
 const searchSlice = createSlice({
     name: 'search',
     initialState,
@@ -13,5 +17,6 @@ const searchSlice = createSlice({
     }
 })
 
-export const {toggleSearch} = searchSlice.actions;
-export default searchSlice.reducer;
+
+export const { actions: searchActions } = searchSlice;
+export const { reducer: searchReducer } = searchSlice;

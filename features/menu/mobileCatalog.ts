@@ -1,10 +1,13 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-const initialState = {
+const initialState:CatalogSchema = {
     catalogIsOpen: false,
 }
+export type CatalogSchema = {
+    catalogIsOpen: boolean,
+}
 
-const menuSlice = createSlice({
+const mobileCatalogSlice = createSlice({
     name: 'mobileCatalog',
     initialState,
     reducers: {
@@ -13,5 +16,6 @@ const menuSlice = createSlice({
         }
     },
 })
-export const {toggleMobileCatalog} = menuSlice.actions;
-export default menuSlice.reducer;
+
+export const { actions: mobileCatalogActions } = mobileCatalogSlice;
+export const { reducer: mobileCatalogReducer } = mobileCatalogSlice;
