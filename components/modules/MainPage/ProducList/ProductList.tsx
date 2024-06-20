@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getNewProducts, getBestsellerProducts} from "@/api/main-page";
-import ProductListItem from "@/components/modules/MainPage/ProductListItem/ProductListItem";
+import ProductListItem from "@/components/modules/ProductListItem/ProductListItem";
 import styles from '@/styles/product-list-item/index.module.scss'
 function ProductList() {
     const newProducts = useSelector(state => state.products.newProducts);

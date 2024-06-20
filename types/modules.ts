@@ -29,3 +29,21 @@ export interface IProduct {
     popularity: number
     errorMessage?: string
 }
+
+export interface IBreadcrumbsProps {
+    getTextGenerator: (arg0: string, query: string[]) => void
+    getDefaultTextGenerator: (arg0: string) => string
+}
+
+export interface ICrumbProps {
+    text: string
+    textGenerator: () => string
+    href: string
+    last: boolean
+}
+export type SearchParams = { [key: string]: string | string[] | undefined }
+
+export interface IProductsPage {
+    searchParams: SearchParams
+    pageName: string
+}
