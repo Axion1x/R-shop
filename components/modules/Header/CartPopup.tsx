@@ -6,8 +6,7 @@ import "@/app/globalStyles/menu.scss"
 import {useLang} from "@/hooks/useLang";
 import {AnimatePresence} from "framer-motion";
 import { motion } from "framer-motion"
-import {useDispatch, useSelector} from "react-redux";
-import {cartActions} from "@/features/cart/cartSlice";
+import {useSelector} from "react-redux";
 import CartItem from "@/components/modules/Header/CartItem";
 
 

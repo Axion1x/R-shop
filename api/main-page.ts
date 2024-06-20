@@ -1,4 +1,3 @@
-
 import api from './apiInstance'
 import {createAsyncThunk} from "@reduxjs/toolkit";
 
@@ -17,3 +16,4 @@ export const getBestsellerProducts = createAsyncThunk(
         return response.data;
     }
 );
+

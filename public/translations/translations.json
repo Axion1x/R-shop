@@ -292,7 +292,7 @@
       "umbrella": "Зонти",
       "bags": "Сумки",
       "outerwear": "Верхній одяг",
-      "long-sleeves": "Лонг-сліви",
+      "long-sleeves": "Кофти",
       "headdress": "Головні убори",
       "hoodie": "Худі",
       "business-souvenirs": "Бізнес-сувеніри",
@@ -373,7 +373,7 @@
       "from": "Від",
       "to": "До",
       "uah": "грн.",
-      "done": "Готово",
+      "done": "Відсортувати",
       "size": "Розмір",
       "color": "Колір",
       "purpure": "Фіолетовий",
@@ -387,7 +387,7 @@
       "next_page": "Наступна сторінка",
       "previous_page": "Попередня сторінка",
       "filters": "Фільтри",
-      "found": "Знайдено",
+      "found": "товарів",
       "nothing_found": "Нічого не знайдено"
     },
     "size_table": {

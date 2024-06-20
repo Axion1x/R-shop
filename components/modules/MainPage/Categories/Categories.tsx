@@ -17,6 +17,7 @@ const Categories = () => {
     const [screenWidth, setScreenWidth] = useState<number | null>(null);
 
     useEffect(() => {
+
         const updateScreenWidth = () => {
             setScreenWidth(window.innerWidth);
         };

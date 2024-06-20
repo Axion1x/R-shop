@@ -6,6 +6,7 @@ import {CatalogSchema, mobileCatalogReducer} from "@/features/menu/mobileCatalog
 import {searchReducer, SearchSchema} from "@/features/menu/headerSearch";
 import {cartReducer} from "@/features/cart/cartSlice";
 import storage from 'redux-persist/lib/storage'
+import {catalogReducer} from '@/features/catalogOptions/catalogOptionsSlice'
 import {
     persistStore,
     persistReducer,
@@ -24,6 +25,7 @@ const reducers = combineReducers({
     search: searchReducer,
     products: productsReducer,
     cart: cartReducer,
+    catalog: catalogReducer,
 })
 
 

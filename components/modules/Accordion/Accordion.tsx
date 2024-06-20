@@ -14,22 +14,22 @@ function Accordion() {
                         {
                             id: 1,
                             text: translations[lang].comparison['t-shirts'],
-                            href: '/catalog/cloth?offset=0&type=t-shirts',
+                            href: '/catalog.ts/cloth?offset=0&type=t-shirts',
                         },
                         {
                             id: 2,
                             text: translations[lang].comparison['long-sleeves'],
-                            href: '/catalog/cloth?offset=0&type=long-sleeves',
+                            href: '/catalog.ts/cloth?offset=0&type=long-sleeves',
                         },
                         {
                             id: 3,
                             text: translations[lang].comparison.hoodie,
-                            href: '/catalog/cloth?offset=0&type=hoodie',
+                            href: '/catalog.ts/cloth?offset=0&type=hoodie',
                         },
                         {
                             id: 4,
                             text: translations[lang].comparison.outerwear,
-                            href: '/catalog/cloth?offset=0&type=outerwear',
+                            href: '/catalog.ts/cloth?offset=0&type=outerwear',
                         },
                     ],
                 },
@@ -39,17 +39,17 @@ function Accordion() {
                         {
                             id: 1,
                             text: translations[lang].comparison.bags,
-                            href: '/catalog/accessories?offset=0&type=bags',
+                            href: '/catalog.ts/accessories?offset=0&type=bags',
                         },
                         {
                             id: 2,
                             text: translations[lang].comparison.headdress,
-                            href: '/catalog/accessories?offset=0&type=headdress',
+                            href: '/catalog.ts/accessories?offset=0&type=headdress',
                         },
                         {
                             id: 3,
                             text: translations[lang].comparison.umbrella,
-                            href: '/catalog/accessories?offset=0&type=umbrella',
+                            href: '/catalog.ts/accessories?offset=0&type=umbrella',
                         },
                     ],
                 },
@@ -59,12 +59,12 @@ function Accordion() {
                         {
                             id: 1,
                             text: translations[lang].comparison['business-souvenirs'],
-                            href: '/catalog/souvenirs?offset=0&type=business-souvenirs',
+                            href: '/catalog.ts/souvenirs?offset=0&type=business-souvenirs',
                         },
                         {
                             id: 2,
                             text: translations[lang].comparison['promotional-souvenirs'],
-                            href: '/catalog/souvenirs?offset=0&type=promotional-souvenirs',
+                            href: '/catalog.ts/souvenirs?offset=0&type=promotional-souvenirs',
                         },
                     ],
                 },
@@ -74,12 +74,12 @@ function Accordion() {
                         {
                             id: 1,
                             text: translations[lang].comparison.notebook,
-                            href: '/catalog/office?offset=0&type=notebook',
+                            href: '/catalog.ts/office?offset=0&type=notebook',
                         },
                         {
                             id: 2,
                             text: translations[lang].comparison.pen,
-                            href: '/catalog/office?offset=0&type=pen',
+                            href: '/catalog.ts/office?offset=0&type=pen',
                         },
                     ],
                 },
