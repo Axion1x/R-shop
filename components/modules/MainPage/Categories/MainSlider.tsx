@@ -9,7 +9,7 @@ const MainSlider = () => {
         <div className='container'>
             <Swiper modules={[EffectFade]} effect="fade" className='swiper'>
                 {[1, 2, 3].map((i, el) => {
-                    return <SwiperSlide>Slide {el}</SwiperSlide>;
+                    return <SwiperSlide key={i}>Slide {el}</SwiperSlide>;
                 })}
             </Swiper>
         </div>
