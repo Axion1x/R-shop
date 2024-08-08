@@ -60,6 +60,10 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
+  @media (max-width:1000px) {
+
+    
+  }
 }
 
 
@@ -70,10 +74,13 @@
 
 
 .catalog {
+  padding:0 100px ;
+  
   &__filters {
     margin-bottom: 10px;
     &__select {
       position: relative;
+      
 
       &:not(:last-child) {
         margin-right: 24px;
@@ -82,11 +89,11 @@
           margin-right: 0;
           margin-bottom: 24px;
         }
-
-        @media (max-width: 610px) {
-          margin-bottom: 0;
-        }
       }
+    }
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;   
     }
 
     ///Filters button
@@ -116,8 +123,11 @@
       }
 
       transition: transform 0.2s, box-shadow 0.2s;
-      @media (max-width: 390px) {
-        min-width: 220px;
+      @media (max-width: 1000px) {
+        min-width: 200px;
+      }
+      @media (max-width: 768px) {
+        min-width: 100%;
       }
 
 
@@ -334,6 +344,9 @@
       }
     }
 
+  }
+  @media (max-width: 1200px) {
+    padding: 0 !important;   
   }
 }
 
