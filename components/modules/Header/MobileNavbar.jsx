@@ -22,7 +22,7 @@ const MobileNavbar = () => {
             <MobileCatalog />
             <div className='mobileNavContainer'>
                 <ul className='mobileNav'>
-                    <Link href='/diploma/public' className='mobile-navbar__btn mainImg'>
+                    <Link href='/homepage' className='mobile-navbar__btn mainImg'>
                         {translations[lang].breadcrumbs.main}
                     </Link>
                     <button
