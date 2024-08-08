@@ -6,7 +6,7 @@ export default function Home() {
     const {push} = useRouter()
     useEffect(() => {
         push('/homepage')
-    }, [])
+    }, [push])
     return (
        <></>
     );

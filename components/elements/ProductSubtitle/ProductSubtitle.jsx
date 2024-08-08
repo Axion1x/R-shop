@@ -1,0 +1,29 @@
+import { useLang } from '@/hooks/useLang'
+
+const ProductSubtitle = ({
+                             subtitleClassName,
+                             subtitleRectClassName,
+                         }) => {
+    const { lang, translations } = useLang()
+    const descriptionSlicePosition = lang === 'ua' ? 5 : 2
+
+    return (
+        <div className={subtitleClassName}>
+            <div className={subtitleRectClassName} />
+            <span>
+        {translations[lang].main_page.hero_description.slice(
+            0,
+            descriptionSlicePosition
+        )}
+      </span>
+            <br />
+            <span>
+        {translations[lang].main_page.hero_description.slice(
+            descriptionSlicePosition
+        )}
+      </span>
+        </div>
+    )
+}
+
+export default ProductSubtitle

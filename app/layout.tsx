@@ -5,11 +5,7 @@ import "./globalStyles/header.scss";
 import React from "react";
 import Layout from "@/components/layouts/Layout";
 import {Next13ProgressBar} from 'next13-progressbar'
-export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
-    children: React.ReactNode;
-}>) {
+export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
     return (
         <html lang="ua"
               suppressHydrationWarning
@@ -21,3 +17,4 @@ export default function RootLayout({
         </html>
     );
 }
+ 
